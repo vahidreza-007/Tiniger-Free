@@ -58,7 +58,7 @@ function check_user(msg)
 local var = true
 if database:get(SUDO.."forcejoin") then
 local channel = '@TiniGerTeaM'
-local url , res = https.request('https://api.telegram.org/bot503686747:AAENHIoknRLLtHG7X6Km6ky2fc736lTmf2g/getchatmember?chat_id='..channel..'&user_id='..msg.sender_user_id_)
+local url , res = https.request('https://api.telegram.org/botToken/getchatmember?chat_id='..channel..'&user_id='..msg.sender_user_id_)
 data = json:decode(url)
 if res ~= 200 or data.result.status == "left" or data.result.status == "kicked" then
  var = false
